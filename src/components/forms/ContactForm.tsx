@@ -3,18 +3,30 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
+import { trpc } from '@/utilities/trpc'
 import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Form, FormControl, FormField, FormLabel, FormItem } from '@/components/ui/form'
 
 import { ContactFormType, ContactFormSchema } from '@/types/forms/ContactForm'
-import { Button } from '../ui/button'
 
 export default function ContactForm() {
     const form = useForm<ContactFormType>({ resolver: zodResolver(ContactFormSchema) })
+    const contact = trpc.email.contact.useMutation({
+        onSuccess: () => {
+            form.setValue('name', '')
+            form.setValue('businessName', '')
+            form.setValue('email', '')
+            form.setValue('phone', '')
+            form.setValue('message', '')
+        }
+    })
 
     function onSubmit(values: ContactFormType) {
-        console.log(values)
+        contact.mutate({
+            ...values
+        })
     }
 
     return (
