@@ -51,12 +51,12 @@ export default function Navbar() {
                                 </DropdownMenuContent>
                             </DropdownMenu>
 
-                            <Link href={'/auth/login'} className={`${buttonVariants({
+                            {/*<Link href={'/auth/login'} className={`${buttonVariants({
                                 variant: 'default',
                                 size: 'sm'
                             })}`}>
                                 Login <LogIn className='ml-2 h-5 w-5' />
-                            </Link>
+                            </Link>*/}
                         </>
                     </div>
                 </div>
