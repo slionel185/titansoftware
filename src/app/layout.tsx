@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 
+import Navbar from '@/components/nav/Navbar'
 import { Toaster } from '@/components/ui/toaster'
 import MainProvider from '@/components/providers/MainProvider'
 
@@ -32,6 +33,7 @@ export default function RootLayout({
             </head>
             <body className={inter.className}>
                 <MainProvider>
+                    <Navbar />
                     {children}
                     <Toaster />
                     <Analytics />

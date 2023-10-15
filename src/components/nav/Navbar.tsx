@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
+import { SunMoon } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { LogIn, SunMoon } from 'lucide-react'
 
 import { Button, buttonVariants } from '@/components/ui/button'
 import MaxWidthContainer from '@/components/containers/MaxWidthContainer'
@@ -36,6 +36,13 @@ export default function Navbar() {
 
                     <div className='flex items-center space-x-4 sm:flex'>
                         <>
+                            <Link href={'/pricing'} className={`${buttonVariants({
+                                variant: 'ghost',
+                                size: 'sm'
+                            })}`}>
+                                Pricing
+                            </Link>
+
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <Button size={'icon'} variant={'ghost'}>
@@ -50,13 +57,6 @@ export default function Navbar() {
                                     </DropdownMenuRadioGroup>        
                                 </DropdownMenuContent>
                             </DropdownMenu>
-
-                            {/*<Link href={'/auth/login'} className={`${buttonVariants({
-                                variant: 'default',
-                                size: 'sm'
-                            })}`}>
-                                Login <LogIn className='ml-2 h-5 w-5' />
-                            </Link>*/}
                         </>
                     </div>
                 </div>
