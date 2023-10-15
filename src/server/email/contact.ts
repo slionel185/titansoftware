@@ -13,7 +13,7 @@ export const contact = procedure
         try {
             const data = await resend.emails.send({
                 from: 'contact@titansoftware.dev',
-                to: ['slionel1850@gmail.com', 'remattdavis@outlook.com'],
+                to: ['storrence@titansoftware.dev', 'mdavis@titansoftware.dev', 'slionel1850@gmail.com'],
                 subject: 'Titan Software: New form submission',
                 react: ContactEmail({ values })
             })
