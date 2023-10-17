@@ -1,8 +1,6 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { Calendar, Phone } from 'lucide-react'
+import { Phone } from 'lucide-react'
 
-import Navbar from '@/components/nav/Navbar'
 import { buttonVariants } from '@/components/ui/button'
 import ContactForm from '@/components/forms/ContactForm'
 import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card'

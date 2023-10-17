@@ -16,7 +16,7 @@ export default function QueryProvider({
     const [trpcClient] = useState(() => trpc.createClient({
         links: [
             httpBatchLink({
-                url: `http://localhost:3000/api/trpc`
+                url: `https://titansoftware.dev/api/trpc`
             })
         ]
     }))
