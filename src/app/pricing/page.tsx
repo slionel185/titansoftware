@@ -1,7 +1,9 @@
+import Link from 'next/link'
 import { Check } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import MaxWidthContainer from '@/components/containers/MaxWidthContainer'
+import ContactFormModal from '@/components/modals/ContactFormModal'
 
 export default function PricingPage() {
 
@@ -22,7 +24,7 @@ export default function PricingPage() {
                     <p className='font-light sm:text-lg'>Best option for websites, personal or small business focused.</p>
                     <div className="flex flex-col justify-center items-center my-8 gap-2">
                         <span className='text-muted-foreground'>Starting at</span>
-                        <span className='mr-2 text-5xl font-extrabold'>$399</span>
+                        <span className='mr-2 text-5xl font-extrabold'>$149</span>
                     </div>
                     <ul role="list" className="mb-8 space-y-4 text-left">
                         <li className="flex items-center space-x-3">
@@ -46,7 +48,7 @@ export default function PricingPage() {
                             <span>Revisions based on optional retainer</span>
                         </li>
                     </ul>
-                    <Button size={'lg'}>Get started</Button>
+                    <ContactFormModal plan='Starter' />
                 </div>
 
                 <div className="flex flex-col p-6 mx-auto w-full text-center rounded-md border shadow xl:p-8 ">
@@ -67,7 +69,7 @@ export default function PricingPage() {
                         </li>
                         <li className="flex items-center space-x-3">
                             <Check className='text-green-400 h-5 w-5' />
-                            <span>Hosting provided to you</span>
+                            <span>Hosting solution handled for you</span>
                         </li>
                         <li className="flex items-center space-x-3">
                             <Check className='text-green-400 h-5 w-5' />
@@ -78,7 +80,7 @@ export default function PricingPage() {
                             <span>Unlimited revisions</span>
                         </li>
                     </ul>
-                    <Button size={'lg'}>Get started</Button>
+                    <ContactFormModal plan='Professional' />
                 </div>
             </div>
         </MaxWidthContainer>

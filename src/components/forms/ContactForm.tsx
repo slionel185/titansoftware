@@ -31,7 +31,7 @@ export default function ContactForm() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col pt-8'>
+            <form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col'>
                 <div className='flex flex-col lg:grid grid-cols-2 grid-rows-2 gap-2 lg:gap-6'>
                     <FormField name='name' control={form.control} render={({ field }) => (
                         <FormItem className='w-full'>

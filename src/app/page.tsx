@@ -72,10 +72,10 @@ export default function HomePage() {
                         <div className='mx-auto max-w-6xl px-6 lg:px-8'>
                             <div className='mb-20 flow-root sm:mt-24'>
                                 <div className='-m-2 rounded-xl bg-foreground/5 p-2 ring-1 ring-inset ring-foreground/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
-                                    <Card className='p-2 lg:p-6'>
+                                    <Card id='contact' className='p-2 lg:p-6'>
                                         <CardTitle className='mt-2 font-bold text-4xl text-foreground sm:text-5xl text-center'>Book your consultation now</CardTitle>
                                         <CardDescription className='mt-4 text-lg text-muted-foreground text-center'>Creating your future has never been easier.</CardDescription>
-                                        <CardContent className='pt-0 p-2 lg:pr-6 lg:pl-6 lg:pb-6'>
+                                        <CardContent className='pt-0 p-2 lg:pr-6 lg:pl-6 lg:pb-6 mt-8'>
                                             <ContactForm />
                                         </CardContent>
                                     </Card>
