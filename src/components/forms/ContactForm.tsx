@@ -13,7 +13,7 @@ import { ContactFormType, ContactFormSchema } from '@/types/forms/ContactForm'
 
 export default function ContactForm() {
     const form = useForm<ContactFormType>({ resolver: zodResolver(ContactFormSchema) })
-    const contact = trpc.email.contact.useMutation({
+    const contact = trpc.email.useMutation({
         onSuccess: () => {
             console.log('Success')
             form.setValue('name', '')
