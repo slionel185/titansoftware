@@ -19,8 +19,8 @@ export const contact = procedure
                 react: ContactEmail({ values })
             })
 
-            console.log(data)
-            return NextResponse.json(data)
+            if(data.id) return NextResponse.json(data)
+            return NextResponse.json('Bad?')
         } catch (error) {
             return NextResponse.json(error)
         }
