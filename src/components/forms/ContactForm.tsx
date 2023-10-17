@@ -15,6 +15,7 @@ export default function ContactForm() {
     const form = useForm<ContactFormType>({ resolver: zodResolver(ContactFormSchema) })
     const contact = trpc.email.contact.useMutation({
         onSuccess: () => {
+            console.log('Success')
             form.setValue('name', '')
             form.setValue('businessName', '')
             form.setValue('email', '')
@@ -24,9 +25,8 @@ export default function ContactForm() {
     })
 
     function onSubmit(values: ContactFormType) {
-        contact.mutate({
-            ...values
-        })
+        console.log('Submitting')
+        contact.mutate({...values})
     }
 
     return (
