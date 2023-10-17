@@ -2,12 +2,13 @@
 
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
-import { SunMoon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 import { Button, buttonVariants } from '@/components/ui/button'
 import MaxWidthContainer from '@/components/containers/MaxWidthContainer'
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem } from '@/components/ui/dropdown-menu'
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuItem } from '@/components/ui/dropdown-menu'
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+import { LogIn } from 'lucide-react'
 
 export default function Navbar() {
     const { setTheme } = useTheme()
@@ -34,7 +35,7 @@ export default function Navbar() {
 
                     {/* TODO: Add mobile navbar later. */}
 
-                    <div className='flex items-center space-x-4 sm:flex'>
+                    <div className='flex items-center gap-2 lg:gap-4 sm:flex'>
                         <>
                             <Link href={'/pricing'} className={`${buttonVariants({
                                 variant: 'ghost',
@@ -42,21 +43,13 @@ export default function Navbar() {
                             })}`}>
                                 Pricing
                             </Link>
-
-                            <DropdownMenu>
-                                <DropdownMenuTrigger asChild>
-                                    <Button size={'icon'} variant={'ghost'}>
-                                        <SunMoon className='h-5 w-5' />
-                                    </Button>
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent>
-                                    <DropdownMenuRadioGroup value={radioTheme} onValueChange={setRadioTheme}>
-                                        <DropdownMenuRadioItem value='SYSTEM'>System</DropdownMenuRadioItem>
-                                        <DropdownMenuRadioItem value='DARK'>Dark Theme</DropdownMenuRadioItem>
-                                        <DropdownMenuRadioItem value='LIGHT'>Light Theme</DropdownMenuRadioItem>
-                                    </DropdownMenuRadioGroup>        
-                                </DropdownMenuContent>
-                            </DropdownMenu>
+                            
+                            <Link href={'/auth/login'} className={`${buttonVariants({
+                                variant: 'ghost',
+                                size: 'sm'
+                            })}`}>
+                                Login
+                            </Link>
                         </>
                     </div>
                 </div>

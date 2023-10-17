@@ -55,7 +55,7 @@ export default function ContactForm() {
                         <FormItem className='w-full'>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
-                                <Input className='w-full' placeholder='contact@titansoftware.dev' {...field} />
+                                <Input className='w-full' type='email' placeholder='contact@titansoftware.dev' {...field} />
                             </FormControl>
                         </FormItem>
                     )} />
@@ -64,7 +64,7 @@ export default function ContactForm() {
                         <FormItem className='w-full'>
                             <FormLabel>Phone</FormLabel>
                             <FormControl>
-                                <Input className='w-full' placeholder='(302) 740-6194' {...field} />
+                                <Input className='w-full' type='number' placeholder='(302) 740-6194' {...field} />
                             </FormControl>
                         </FormItem>
                     )} />
