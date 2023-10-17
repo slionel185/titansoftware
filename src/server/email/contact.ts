@@ -12,7 +12,6 @@ export const contact = procedure
         const values = opts.input
 
         try {
-            console.log('Hello')
             const data = await resend.emails.send({
                 from: 'contact@titansoftware.dev',
                 to: ['storrence@titansoftware.dev', 'mdavis@titansoftware.dev', 'slionel1850@gmail.com'],
@@ -20,9 +19,9 @@ export const contact = procedure
                 react: ContactEmail({ values })
             })
 
+            console.log(data)
             return NextResponse.json(data)
         } catch (error) {
-            console.log(error)
             return NextResponse.json(error)
         }
     })
