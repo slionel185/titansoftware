@@ -4,7 +4,7 @@ import QueryProvider from '@/components/providers/QueryProvider'
 
 export default function MainProvider({ children }: any) {
     return (
-        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+        <ThemeProvider attribute='class' defaultTheme='dark'>
             <AuthProvider>
                 <QueryProvider>
                     {children}
