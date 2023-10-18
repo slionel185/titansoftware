@@ -1,8 +1,15 @@
+import { redirect } from 'next/navigation'
+import { getServerSession } from 'next-auth'
+
 import { Card } from '@/components/ui/card'
 import LoginForm from '@/components/forms/LoginForm'
 import MaxWidthContainer from '@/components/containers/MaxWidthContainer'
 
-export default function LoginPage() {
+export default async function LoginPage() {
+    const session = await getServerSession()
+
+    if(session) redirect('/dashboard')
+
     return (
         <>
             <MaxWidthContainer className='mb-12 mt-12 flex flex-col justify-center items-center text-center bg-background'>

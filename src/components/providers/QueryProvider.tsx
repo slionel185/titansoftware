@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { httpBatchLink } from '@trpc/react-query'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
+import { env } from '@/utilities/env'
 import { trpc } from '@/utilities/trpc'
 
 export default function QueryProvider({
@@ -16,7 +17,7 @@ export default function QueryProvider({
     const [trpcClient] = useState(() => trpc.createClient({
         links: [
             httpBatchLink({
-                url: `https://titansoftware.dev/api/trpc`
+                url: `${env.NEXT_PUBLIC_QUERYCLIENT_URL}/api/trpc`
             })
         ]
     }))

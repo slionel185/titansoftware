@@ -2,22 +2,44 @@
 
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
+import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { trpc } from '@/utilities/trpc'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
+import { useToast } from '@/components/ui/use-toast'
 import { Form, FormControl, FormField, FormLabel, FormItem } from '@/components/ui/form'
 
 import { RegisterFormType, RegisterFormSchema } from '@/types/auth/RegisterForm'
 
 export default function RegisterForm() {
+    const router = useRouter()
+    const { toast } = useToast()
     const form = useForm<RegisterFormType>({ resolver: zodResolver(RegisterFormSchema) })
+    const register = trpc.auth.register.useMutation()
 
     function onSubmit(values: RegisterFormType) {
-        console.log(values)
-    }
+        register.mutate(values, {
+            onSuccess({ error, message }) {
+                if(error) {
+                    toast({
+                        title: 'Error',
+                        variant: 'destructive',
+                        description: message
+                    })
+                } else {
+                    toast({
+                        title: 'User created',
+                        description: 'Redirecting...'
+                    })
 
+                    router.push('/auth/login')
+                }
+            }
+        })
+    }
+    
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col'>

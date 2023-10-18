@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { signIn } from 'next-auth/react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -15,7 +16,7 @@ export default function LoginForm() {
     const form = useForm<LoginFormType>({ resolver: zodResolver(LoginFormSchema) })
 
     function onSubmit(values: LoginFormType) {
-        console.log(values)
+        signIn('Titan-Credentials', values)
     }
 
     return (
@@ -35,7 +36,7 @@ export default function LoginForm() {
                         <FormItem className='w-full'>
                             <FormLabel>Password</FormLabel>
                             <FormControl>
-                                <Input className='w-full' placeholder='Password' {...field} />
+                                <Input className='w-full' type='password' placeholder='Password' {...field} />
                             </FormControl>
                         </FormItem>
                     )} />

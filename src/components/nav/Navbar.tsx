@@ -1,29 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import { useSession, signOut } from 'next-auth/react'
 
 import { Button, buttonVariants } from '@/components/ui/button'
 import MaxWidthContainer from '@/components/containers/MaxWidthContainer'
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuItem } from '@/components/ui/dropdown-menu'
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
-import { LogIn } from 'lucide-react'
 
 export default function Navbar() {
-    const { setTheme } = useTheme()
-
-    const [radioTheme, setRadioTheme] = useState('SYSTEM')
-
-    useEffect(() => {
-        if(radioTheme === 'SYSTEM') {
-            setTheme('system')
-        } else if(radioTheme === 'LIGHT') {
-            setTheme('light')
-        } else if(radioTheme === 'DARK') {
-            setTheme('dark')
-        }
-    }, [radioTheme])
+    const { data, status } = useSession()
 
     return (
         <nav className='sticky h-20 inset-x-0 top-0 z-30 w-full border-b bg-background/75 backdrop-blur-lg transition-all'>
@@ -44,12 +28,14 @@ export default function Navbar() {
                                 Pricing
                             </Link>
                             
-                            <Link href={'/auth/login'} className={`${buttonVariants({
+                            {(status === 'loading' || status === 'unauthenticated') && <Link href={'/auth/login'} className={`${buttonVariants({
                                 variant: 'ghost',
                                 size: 'sm'
                             })}`}>
                                 Login
-                            </Link>
+                            </Link>}
+
+                            {status === 'authenticated' && <Button variant={'ghost'} size={'sm'} onClick={() => signOut()}>Logout</Button>}
                         </>
                     </div>
                 </div>

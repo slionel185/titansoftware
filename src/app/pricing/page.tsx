@@ -1,7 +1,5 @@
-import Link from 'next/link'
 import { Check } from 'lucide-react'
 
-import { Button, buttonVariants } from '@/components/ui/button'
 import MaxWidthContainer from '@/components/containers/MaxWidthContainer'
 import ContactFormModal from '@/components/modals/ContactFormModal'
 
