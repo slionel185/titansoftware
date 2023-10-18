@@ -6,7 +6,7 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 
 import { prisma } from '@/utilities/prisma'
 
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
     providers: [
         CredentialsProvider({
             id: 'Titan-Credentials',

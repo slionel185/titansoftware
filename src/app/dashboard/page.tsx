@@ -15,6 +15,10 @@ export default async function AdminPage() {
     )
 
     return (
-        <div></div>
+        <MaxWidthContainer className='mb-12 mt-12 flex flex-col justify-center items-center text-center bg-background'>
+                <h1 className='max-w-4xl text-5xl font-bold md:text-6xl text-foreground lg:text-7xl'>
+                    Users (Clients / Employees)
+                </h1>
+        </MaxWidthContainer>
     )
 }
