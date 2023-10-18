@@ -37,6 +37,21 @@ const authOptions: NextAuthOptions = {
             }
         })
     ],
+    callbacks: {
+        async session({ session, user }: any) {
+            const dbUser = await prisma.user.findFirst({
+                where: {
+                    email: {
+                        equals: session.user.email,
+                        mode: 'insensitive'
+                    }
+                }
+            })
+
+            user = dbUser
+            return user
+        }
+    },
     pages: {
         signIn: '/auth/login'
     }
