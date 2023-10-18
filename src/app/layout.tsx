@@ -12,7 +12,8 @@ import MainProvider from '@/components/providers/MainProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-    title: 'Titan Software'
+    title: 'Titan Software',
+    themeColor: '#09090B'
 }
 
 export default function RootLayout({
