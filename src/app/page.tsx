@@ -1,16 +1,15 @@
 import Link from 'next/link'
-import { HardHat, Phone, Quote } from 'lucide-react'
+import { Folder, Phone, Quote } from 'lucide-react'
 
+import { Separator } from '@/components/ui/separator'
 import { buttonVariants } from '@/components/ui/button'
 import ContactForm from '@/components/forms/ContactForm'
-import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card'
 import MaxWidthContainer from '@/components/containers/MaxWidthContainer'
-import { Separator } from '@/components/ui/separator'
+import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card'
 
 export default function HomePage() {
     return (
         <>
-
             <MaxWidthContainer className='mb-12 mt-8 sm:mt-16 flex flex-col justify-center items-center text-center bg-background'>
                 <div className='mx-auto mb-8 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border bg-white px-7 py-2 shadow-md backdrop-blue transition-all'>
                     <p className='text-sm font-semibold text-gray-900'>Titan Software now live!</p>
@@ -33,7 +32,7 @@ export default function HomePage() {
                         variant: 'outline',
                         size: 'lg'
                     })}>
-                        Our projects <HardHat className='ml-2 h-5 w-5' />
+                        Our projects <Folder className='ml-2 h-5 w-5' />
                     </Link>
                 </div>
             </MaxWidthContainer>
