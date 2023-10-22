@@ -48,8 +48,8 @@ const authOptions: NextAuthOptions = {
                 }
             })
 
-            user = dbUser
-            return user
+            session.user = dbUser
+            return session
         }
     },
     pages: {

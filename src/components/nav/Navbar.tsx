@@ -13,7 +13,7 @@ export default function Navbar() {
         <nav className='sticky h-20 inset-x-0 top-0 z-30 w-full border-b bg-background/75 backdrop-blur-lg transition-all'>
             <MaxWidthContainer>
                 <div className='flex h-20 items-center justify-between border-b borer-zinc-200'>
-                    <Link href={'/'} className='flex z-40 font-semibold'>
+                    <Link href={status === 'authenticated' ? '/dashboard' : '/'} className='flex z-40 font-semibold'>
                         <span className='text-2xl scroll-m-20font-extrabold tracking-tight'>Titan Software</span>
                     </Link>
 
@@ -21,14 +21,21 @@ export default function Navbar() {
 
                     <div className='flex items-center gap-2 lg:gap-4 sm:flex'>
                         <>
-                            <Link href={'/pricing'} className={`${buttonVariants({
+                            {(status === 'unauthenticated') && <Link href={'/pricing'} className={`${buttonVariants({
                                 variant: 'ghost',
                                 size: 'sm'
                             })}`}>
                                 Pricing
-                            </Link>
+                            </Link>}
+
+                            {status === 'authenticated' && <Link href={'/dashboard/prospects'} className={`${buttonVariants({
+                                variant: 'ghost',
+                                size: 'sm'
+                            })}`}>
+                                Prospects
+                            </Link>}
                             
-                            {(status === 'loading' || status === 'unauthenticated') && <Link href={'/auth/login'} className={`${buttonVariants({
+                            {(status === 'unauthenticated') && <Link href={'/auth/login'} className={`${buttonVariants({
                                 variant: 'ghost',
                                 size: 'sm'
                             })}`}>

@@ -1,17 +1,18 @@
 import Link from 'next/link'
-import { Phone } from 'lucide-react'
+import { HardHat, Phone, Quote } from 'lucide-react'
 
 import { buttonVariants } from '@/components/ui/button'
 import ContactForm from '@/components/forms/ContactForm'
 import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card'
 import MaxWidthContainer from '@/components/containers/MaxWidthContainer'
+import { Separator } from '@/components/ui/separator'
 
 export default function HomePage() {
     return (
         <>
 
             <MaxWidthContainer className='mb-12 mt-8 sm:mt-16 flex flex-col justify-center items-center text-center bg-background'>
-                <div className='mx-auto mb-8 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border bg-white px-7 py-2 shadow-md backdrop-blue transition-all hover:bg-white/50'>
+                <div className='mx-auto mb-8 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border bg-white px-7 py-2 shadow-md backdrop-blue transition-all'>
                     <p className='text-sm font-semibold text-gray-900'>Titan Software now live!</p>
                 </div>
 
@@ -21,15 +22,44 @@ export default function HomePage() {
                 <p className='mt-5 max-w-prose text-muted-foreground sm:text-lg md:text-xl'>
                     Your Vision, Our Expertise {'–'} Together, We Build the Future
                 </p>
-                <div className='mt-8'>
+                <div className='mt-8 flex gap-4'>
                     <Link href={'https://cal.com/sethtorrence/titan-consult'} target='_blank' className={buttonVariants({
                         variant: 'default',
                         size: 'lg'
                     })}>
                         Book a call <Phone className='ml-2 h-5 w-5' />
                     </Link>
+                    <Link href={'/projects'} className={buttonVariants({
+                        variant: 'outline',
+                        size: 'lg'
+                    })}>
+                        Our projects <HardHat className='ml-2 h-5 w-5' />
+                    </Link>
                 </div>
             </MaxWidthContainer>
+
+            <div className='mt-12 mx-auto flex flex-col lg:flex-row justify-center items-center max-w-5xl gap-4 relative p-6 lg:p-0'>
+                <Quote fill={'hsl(var(--muted-foreground))'} className='text-muted-foreground h-16 w-16 lg:h-96 lg:w-96 opacity-50' />
+                <div>
+                    <blockquote className='text-left z-10 text-foreground text-lg italic font-medium'>
+                        We were paying a tremendous amount of money for this software {'–'} roughly $130k+ per year {'–'} and decided to explore a
+                        path to building our own proprietary solution. Seth immediately jumped at the opportunity to build this
+                        solution himself. Without any direction {'–'} other than the look/feel and UX of the existing platform {'–'} Seth
+                        built a proprietary backend architecture with a close replication of the frontend experience {'–'} and he did
+                        so in just 2 months {'–'} the time needed before we renewed the contract with the existing vendor. In
+                        addition, Seth worked closely with the operational team to make optimizations to the existing flow and
+                        presented the new product to the entire company field of 42 clubs. This was a big project that not only
+                        saved the company money, but also gave us control on the platform.
+                    </blockquote>
+                    <figcaption>
+                        <div className='flex gap-2 items-center mt-4'>
+                            <cite className='font-medium text-foreground'>John English</cite>
+                            <Separator className='h-5 w-[2px] rounded-full bg-foreground' orientation='vertical'  />
+                            <cite className='text-sm text-muted-foreground'>VP of Finance, The Edge Fitness Clubs</cite>
+                        </div>
+                    </figcaption>
+                </div>
+            </div>    
 
             <div className='mx-auto mb-32 mt-16 lg:mt-32 max-w-5xl md:px-4'>
 

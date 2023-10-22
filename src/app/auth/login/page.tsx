@@ -21,13 +21,9 @@ export default async function LoginPage() {
 
             
             <div className='mx-auto max-w-lg px-6 lg:px-8'>
-                <div className='mb-20 flow-root sm:mt-24'>
-                    <div className='-m-2 rounded-xl bg-foreground/5 p-2 ring-1 ring-inset ring-foreground/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
-                        <Card id='login' className='p-2 lg:p-6'>
-                            <LoginForm />
-                        </Card>
-                    </div>
-                </div>
+                <Card id='login' className='p-2 lg:p-6'>
+                    <LoginForm />
+                </Card>
             </div>
         </>
     )

@@ -22,7 +22,7 @@ export default function PricingPage() {
                     <p className='font-light sm:text-lg'>Best option for websites, personal or small business focused.</p>
                     <div className="flex flex-col justify-center items-center my-8 gap-2">
                         <span className='text-muted-foreground'>Starting at</span>
-                        <span className='mr-2 text-5xl font-extrabold'>$149</span>
+                        <span className='mr-2 text-5xl font-extrabold'>Custom</span>
                     </div>
                     <ul role="list" className="mb-8 space-y-4 text-left">
                         <li className="flex items-center space-x-3">
