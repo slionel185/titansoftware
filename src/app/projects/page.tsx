@@ -13,7 +13,7 @@ export default function ProjectPage() {
                 <h1 className='max-w-4xl text-5xl font-bold text-foreground'>
                     Our projects
                 </h1>
-                <p className='mt-5 max-w-3xl text-muted-foreground sm:text-lg'>Below are some examples of projects. Some up and running, some under construction. Either way it shows Titan's diverse design language and ability to adapt to any client!</p>
+                <p className='mt-5 max-w-3xl text-muted-foreground sm:text-lg'>Below are some examples of projects. Some up and running, some under construction. Either way it shows Titan&apos;s diverse design language and ability to adapt to any client!</p>
             </MaxWidthContainer>
 
 
