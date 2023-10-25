@@ -1,15 +1,18 @@
 'use client'
 
+import Link from 'next/link'
 import Image from 'next/image'
+import { Link as LinkIcon } from 'lucide-react'
 
+import { Button, buttonVariants } from '@/components/ui/button'
 import MaxWidthContainer from '@/components/containers/MaxWidthContainer'
 
-import TheEdge from '@/assets/projects/TheEdge.png'
-import CTAutoDetailing from '@/assets/projects/CTAutoDetailing.png'
-import Phitlosophy from '@/assets/projects/Phitlosophy.png'
-import Sciron from '@/assets/projects/Sciron.png'
-import Regiment from '@/assets/projects/Regiment.png'
 import HHAF from '@/assets/projects/HHAF.png'
+import Sciron from '@/assets/projects/Sciron.png'
+import TheEdge from '@/assets/projects/TheEdge.png'
+import Regiment from '@/assets/projects/Regiment.png'
+import Phitlosophy from '@/assets/projects/Phitlosophy.png'
+import CTAutoDetailing from '@/assets/projects/CTAutoDetailing.png'
 
 export default function ProjectPage() {
     return (
@@ -24,7 +27,9 @@ export default function ProjectPage() {
 
             <div className='mt-16 mb-16 mx-auto flex flex-col justify-center max-w-4xl px-8 lg:px-0 gap-12'>
                 <div className='flex flex-col'>
-                    <h2 className='scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>The Edge Fitness Clubs</h2>
+                    <div className='flex justify-between border-b overflow-hidden'>
+                        <h2 className='truncate scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0'>The Edge Fitness Clubs</h2>
+                    </div>
                     <p className='pt-6 text-muted-foreground'>Project synopsis</p>
                     <p className='pt-6 text-foreground'>Projects highlights</p>
                     <ul className='mt-2 text-muted-foreground list-inside list-disc'>
@@ -37,7 +42,7 @@ export default function ProjectPage() {
                         <div className='relative isolate'>
                             <div>
                                 <div className='mx-auto max-w-6xl'>
-                                    <div className='mt-12 flow-root'>
+                                    <div className='mt-8 lg:mt-12 flow-root'>
                                         <div className='-m-2 rounded-xl bg-foreground/5 p-2 ring-1 ring-inset ring-foreground/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
                                             <Image className='rounded-md bg-background shadow-2xl ring-1 ring-foreground/10' quality={100} src={TheEdge} alt={'Project Screnshot'} width={3268} height={1862} />
                                         </div>
@@ -49,19 +54,25 @@ export default function ProjectPage() {
                 </div>
 
                 <div className='flex flex-col'>
-                    <h2 className='scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>CT Auto Detailing</h2>
+                    <div className='flex justify-between border-b overflow-hidden'>
+                        <h2 className='truncate scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0'>CT Auto Detailing</h2>
+                        <Link href={'https://ctautodetailing.com'} target='_blank' className={buttonVariants({ size: 'icon', variant: 'ghost' })}>
+                            <LinkIcon className='h-5 w-5' />
+                        </Link>
+                    </div>
                     <p className='pt-6 text-muted-foreground'>Product synonpsis</p>
                     <p className='pt-6 text-foreground'>Projects highlights</p>
                     <ul className='mt-2 text-muted-foreground list-inside list-disc'>
                         <li>Custom website and Stripe integration</li>
                         <li>Hosting provided by Stripe</li>
+                        <li>Storefront with Stripe ecommerce</li>
                     </ul>
 
                     <div>
                         <div className='relative isolate'>
                             <div>
                                 <div className='mx-auto max-w-6xl'>
-                                    <div className='mt-12 flow-root'>
+                                    <div className='mt-8 lg:mt-12 flow-root'>
                                         <div className='-m-2 rounded-xl bg-foreground/5 p-2 ring-1 ring-inset ring-foreground/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
                                             <Image className='rounded-md bg-background shadow-2xl ring-1 ring-foreground/10' quality={100} src={CTAutoDetailing} alt={'Project Screnshot'} width={3268} height={1862} />
                                         </div>
@@ -73,7 +84,12 @@ export default function ProjectPage() {
                 </div>
 
                 <div className='flex flex-col'>
-                    <h2 className='scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>Phitlosophy</h2>
+                    <div className='flex justify-between border-b overflow-hidden'>
+                        <h2 className='truncate scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0'>Phitlosophy</h2>
+                        <Link href={'https://phitlosophy.com'} target='_blank' className={buttonVariants({ size: 'icon', variant: 'ghost' })}>
+                            <LinkIcon className='h-5 w-5' />
+                        </Link>
+                    </div>
                     <p className='pt-6 text-muted-foreground'>Product synonpsis</p>
                     <p className='pt-6 text-foreground'>Projects highlights</p>
                     <ul className='mt-2 text-muted-foreground list-inside list-disc'>
@@ -85,7 +101,7 @@ export default function ProjectPage() {
                         <div className='relative isolate'>
                             <div>
                                 <div className='mx-auto max-w-6xl'>
-                                    <div className='mt-12 flow-root'>
+                                    <div className='mt-8 lg:mt-12 flow-root'>
                                         <div className='-m-2 rounded-xl bg-foreground/5 p-2 ring-1 ring-inset ring-foreground/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
                                             <Image className='rounded-md bg-background shadow-2xl ring-1 ring-foreground/10' quality={100} src={Phitlosophy} alt={'Project Screnshot'} width={3268} height={1862} />
                                         </div>
@@ -97,7 +113,12 @@ export default function ProjectPage() {
                 </div>
 
                 <div className='flex flex-col'>
-                    <h2 className='scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>Sciron</h2>
+                    <div className='flex justify-between border-b overflow-hidden'>
+                        <h2 className='truncate scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0'>Sciron</h2>
+                        <Link href={'https://sciron.app'} target='_blank' className={buttonVariants({ size: 'icon', variant: 'ghost' })}>
+                            <LinkIcon className='h-5 w-5' />
+                        </Link>
+                    </div>
                     <p className='pt-6 text-muted-foreground'>Product synonpsis</p>
                     <p className='pt-6 text-foreground'>Projects highlights</p>
                     <ul className='mt-2 text-muted-foreground list-inside list-disc'>
@@ -109,7 +130,7 @@ export default function ProjectPage() {
                         <div className='relative isolate'>
                             <div>
                                 <div className='mx-auto max-w-6xl'>
-                                    <div className='mt-12 flow-root'>
+                                    <div className='mt-8 lg:mt-12 flow-root'>
                                         <div className='-m-2 rounded-xl bg-foreground/5 p-2 ring-1 ring-inset ring-foreground/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
                                             <Image className='rounded-md bg-background shadow-2xl ring-1 ring-foreground/10' quality={100} src={Sciron} alt={'Project Screnshot'} width={3268} height={1862} />
                                         </div>
@@ -121,7 +142,12 @@ export default function ProjectPage() {
                 </div>
 
                 <div className='flex flex-col'>
-                    <h2 className='scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>Regiment</h2>
+                    <div className='flex justify-between border-b overflow-hidden'>
+                        <h2 className='truncate scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0'>Regiment</h2>
+                        <Link href={'https://regiment.fitness'} target='_blank' className={buttonVariants({ size: 'icon', variant: 'ghost' })}>
+                            <LinkIcon className='h-5 w-5' />
+                        </Link>
+                    </div>
                     <p className='pt-6 text-muted-foreground'>Product synonpsis</p>
                     <p className='pt-6 text-foreground'>Projects highlights</p>
                     <ul className='mt-2 text-muted-foreground list-inside list-disc'>
@@ -133,7 +159,7 @@ export default function ProjectPage() {
                         <div className='relative isolate'>
                             <div>
                                 <div className='mx-auto max-w-6xl'>
-                                    <div className='mt-12 flow-root'>
+                                    <div className='mt-8 lg:mt-12 flow-root'>
                                         <div className='-m-2 rounded-xl bg-foreground/5 p-2 ring-1 ring-inset ring-foreground/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
                                             <Image className='rounded-md bg-background shadow-2xl ring-1 ring-foreground/10' quality={100} src={Regiment} alt={'Project Screnshot'} width={3268} height={1862} />
                                         </div>
@@ -145,11 +171,16 @@ export default function ProjectPage() {
                 </div>
 
                 <div className='flex flex-col'>
-                    <h2 className='scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>Happy Hands and Feet</h2>
+                    <div className='flex justify-between border-b overflow-hidden'>
+                        <h2 className='truncate scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0'>Happy Hands & Feet</h2>
+                        <Link href={'https://hhaf.vercel.app'} target='_blank' className={buttonVariants({ size: 'icon', variant: 'ghost' })}>
+                            <LinkIcon className='h-5 w-5' />
+                        </Link>
+                    </div>
                     <p className='pt-6 text-muted-foreground'>Product synonpsis</p>
                     <p className='pt-6 text-foreground'>Projects highlights</p>
                     <ul className='mt-2 text-muted-foreground list-inside list-disc'>
-                        <li>Condensed 10 forms to 1</li>
+                        <li>Redesign of all important forms</li>
                         <li>Mock up delivered in 6 working hours</li>
                     </ul>
 
@@ -157,7 +188,7 @@ export default function ProjectPage() {
                         <div className='relative isolate'>
                             <div>
                                 <div className='mx-auto max-w-6xl'>
-                                    <div className='mt-12 flow-root'>
+                                    <div className='mt-8 lg:mt-12 flow-root'>
                                         <div className='-m-2 rounded-xl bg-foreground/5 p-2 ring-1 ring-inset ring-foreground/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
                                             <Image className='rounded-md bg-background shadow-2xl ring-1 ring-foreground/10' quality={100} src={HHAF} alt={'Project Screnshot'} width={3268} height={1862} />
                                         </div>
