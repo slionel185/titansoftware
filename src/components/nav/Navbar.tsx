@@ -14,7 +14,7 @@ export default function Navbar() {
 
     return (
         <nav className='sticky h-20 inset-x-0 top-0 z-30 w-full border-b bg-background/75 backdrop-blur-lg transition-all'>
-            <MaxWidthContainer>
+            <MaxWidthContainer className='px-6'>
                 <div className='flex h-20 items-center justify-between border-b borer-zinc-200'>
                     <Link href='/' className='flex z-40 font-semibold'>
                         <span className='text-2xl scroll-m-20font-extrabold tracking-tight'>Titan Software</span>
