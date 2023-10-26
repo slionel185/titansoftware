@@ -1,20 +1,13 @@
 'use client'
 
+import type { User } from '@prisma/client'
+
 import { ColumnDef } from '@tanstack/react-table'
 import { MoreHorizontal, ArrowUpDown, Trash } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from '@/components/ui/dropdown-menu'
-
-export type Prospect = {
-    id: string,
-    businessName: string,
-    contact: string,
-    email: string,
-    phone: string,
-    created: Date
-}
 
 function formatPhoneNumber(phoneNumberString: string) {
     var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
@@ -25,7 +18,7 @@ function formatPhoneNumber(phoneNumberString: string) {
     return null
 }
 
-export const columns: ColumnDef<Prospect>[] = [
+export const columns: ColumnDef<User>[] = [
     {
         id: 'select',
         header: ({ table }) => (
@@ -73,7 +66,7 @@ export const columns: ColumnDef<Prospect>[] = [
         header: 'Phone',
         cell: ({ row }) => {
             const prospect = row.original
-            const formattedCellPhone = formatPhoneNumber(prospect.phone)
+            const formattedCellPhone = formatPhoneNumber(prospect.phone!)
 
             return (
                 <span>
@@ -82,17 +75,17 @@ export const columns: ColumnDef<Prospect>[] = [
             )
         }
     },
-    {
+    /*{
         accessorKey: 'created',
         header: 'Created',
         cell: ({ row }) => {
-            const value = row.original.created
+            const value = row.original.created_at
         
             return (
                 <h1 className='text-muted-foreground' suppressHydrationWarning>{value.toLocaleDateString('en-NY', { hour: 'numeric', minute: 'numeric' })}</h1>
             )
         }
-    },
+    },*/
     {
         id: 'actions',
         cell: ({ row }) => {

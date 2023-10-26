@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Link as LinkIcon } from 'lucide-react'
 
-import { Button, buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import MaxWidthContainer from '@/components/containers/MaxWidthContainer'
 
 import HHAF from '@/assets/projects/HHAF.png'
